@@ -1,17 +1,17 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { NytimesController } from './nytimes.controller';
-import { NytimesModule } from './nytimes.module';
+import { NyTimesController } from './nytimes.controller';
+import { NyTimesModule } from './nytimes.module';
 
-describe('NytimesController', () => {
-  let controller: NytimesController;
+describe('NyTimesController', () => {
+  let controller: NyTimesController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [NytimesModule],
-      controllers: [NytimesController],
+      imports: [NyTimesModule],
+      controllers: [NyTimesController],
     }).compile();
 
-    controller = module.get<NytimesController>(NytimesController);
+    controller = module.get<NyTimesController>(NyTimesController);
   });
 
   it('should be defined', () => {

@@ -3,7 +3,7 @@ import { NyTimesService } from './nytimes.service';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
 
-describe('NytimesService', () => {
+describe('NyTimesService', () => {
   let service: NyTimesService;
 
   beforeEach(async () => {

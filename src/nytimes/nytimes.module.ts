@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { NyTimesService } from './nytimes.service';
-import { NytimesController } from './nytimes.controller';
+import { NyTimesController } from './nytimes.controller';
 import { HttpModule } from '@nestjs/axios';
 import { ConfigModule } from '@nestjs/config';
 
@@ -8,6 +8,6 @@ import { ConfigModule } from '@nestjs/config';
   imports: [HttpModule, ConfigModule],
   providers: [NyTimesService],
   exports: [NyTimesService],
-  controllers: [NytimesController],
+  controllers: [NyTimesController],
 })
-export class NytimesModule {}
+export class NyTimesModule {}

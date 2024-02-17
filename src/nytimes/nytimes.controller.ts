@@ -12,7 +12,7 @@ import { AxiosError } from 'axios';
 
 @ApiTags('nytimes')
 @Controller('nytimes')
-export class NytimesController {
+export class NyTimesController {
   constructor(private readonly nyTimesService: NyTimesService) {}
 
   @Get('best-sellers')

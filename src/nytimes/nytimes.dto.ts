@@ -1,7 +1,7 @@
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('nytimes')
-export class NytimesISBNDto {
+export class NyTimesISBNDto {
   @ApiProperty()
   isbn10: string | number;
 
@@ -10,7 +10,7 @@ export class NytimesISBNDto {
 }
 
 @ApiTags('nytimes')
-export class NytimesBookDetailDto {
+export class NyTimesBookDetailDto {
   @ApiProperty()
   title: string;
 
@@ -43,7 +43,7 @@ export class NytimesBookDetailDto {
 }
 
 @ApiTags('nytimes')
-export class NytimesReviewDto {
+export class NyTimesReviewDto {
   @ApiProperty()
   book_review_link: string;
 
@@ -58,7 +58,7 @@ export class NytimesReviewDto {
 }
 
 @ApiTags('nytimes')
-export class NytimesBookDto {
+export class NyTimesBookDto {
   @ApiProperty()
   list_name: string;
 
@@ -89,14 +89,14 @@ export class NytimesBookDto {
   @ApiProperty()
   amazon_product_url: string;
 
-  @ApiProperty({ type: [NytimesISBNDto] })
-  isbns: NytimesISBNDto[];
+  @ApiProperty({ type: [NyTimesISBNDto] })
+  isbns: NyTimesISBNDto[];
 
-  @ApiProperty({ type: [NytimesBookDetailDto] })
-  book_details: NytimesBookDetailDto[];
+  @ApiProperty({ type: [NyTimesBookDetailDto] })
+  book_details: NyTimesBookDetailDto[];
 
-  @ApiProperty({ type: [NytimesReviewDto] })
-  reviews: NytimesReviewDto[];
+  @ApiProperty({ type: [NyTimesReviewDto] })
+  reviews: NyTimesReviewDto[];
 }
 
 @ApiTags('nytimes')
@@ -113,6 +113,6 @@ export class BestSellersResponseDto {
   @ApiProperty()
   last_modified: string;
 
-  @ApiProperty({ type: [NytimesBookDto] })
-  results: NytimesBookDto[];
+  @ApiProperty({ type: [NyTimesBookDto] })
+  results: NyTimesBookDto[];
 }

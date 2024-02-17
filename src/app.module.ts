@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { NytimesModule } from './nytimes/nytimes.module';
+import { NyTimesModule } from './nytimes/nytimes.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -19,7 +19,7 @@ import * as Joi from 'joi';
         NYTIMES_BOOKS_API_KEY: Joi.string().required(),
       }),
     }),
-    NytimesModule,
+    NyTimesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
