@@ -15,6 +15,11 @@ services:
       - GOOGLE_BOOKS_API_KEY
       - GOOGLE_BOOKS_API_BASEURL
       - ALLOWED_API_KEYS
+    healthcheck:
+      test: [ "CMD", "wget", "--spider", "http://localhost:3000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     restart: unless-stopped
     networks:
       - idt
