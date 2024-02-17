@@ -13,6 +13,7 @@ import * as Joi from 'joi';
           .valid('development', 'production', 'test', 'provision')
           .default('development'),
         PORT: Joi.number().default(3000),
+        API_VERSION: Joi.string().required(),
       }),
     }),
   ],
