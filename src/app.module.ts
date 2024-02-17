@@ -17,6 +17,8 @@ import * as Joi from 'joi';
         API_VERSION: Joi.string().required(),
         NYTIMES_BOOKS_API_BASEURL: Joi.string().uri().required(),
         NYTIMES_BOOKS_API_KEY: Joi.string().required(),
+        GOOGLE_BOOKS_API_KEY: Joi.string().required(),
+        GOOGLE_BOOKS_API_BASEURL: Joi.string().uri().required(),
       }),
     }),
     NyTimesModule,

@@ -100,6 +100,11 @@ export class NyTimesBookDto {
 }
 
 @ApiTags('nytimes')
+export class NyTimesBookExDto extends NyTimesBookDto {
+  googleBookUrl: string;
+}
+
+@ApiTags('nytimes')
 export class BestSellersResponseDto {
   @ApiProperty()
   status: string;
@@ -115,4 +120,22 @@ export class BestSellersResponseDto {
 
   @ApiProperty({ type: [NyTimesBookDto] })
   results: NyTimesBookDto[];
+}
+
+@ApiTags('nytimes')
+export class BestSellersResponseExDto {
+  @ApiProperty()
+  status: string;
+
+  @ApiProperty()
+  copyright: string;
+
+  @ApiProperty()
+  num_results: number;
+
+  @ApiProperty()
+  last_modified: string;
+
+  @ApiProperty({ type: [NyTimesBookExDto] })
+  results: NyTimesBookExDto[];
 }
