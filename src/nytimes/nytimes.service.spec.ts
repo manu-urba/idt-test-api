@@ -18,4 +18,9 @@ describe('NytimesService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should call the nytimes API and return 200', async () => {
+    const response = await service.getBestSellersList('');
+    expect(response.status).toBe('OK');
+  });
 });
