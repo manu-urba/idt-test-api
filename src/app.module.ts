@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { NytimesModule } from './nytimes/nytimes.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -14,8 +15,11 @@ import * as Joi from 'joi';
           .default('development'),
         PORT: Joi.number().default(3000),
         API_VERSION: Joi.string().required(),
+        NYTIMES_BOOKS_API_BASEURL: Joi.string().uri().required(),
+        NYTIMES_BOOKS_API_KEY: Joi.string().required(),
       }),
     }),
+    NytimesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
