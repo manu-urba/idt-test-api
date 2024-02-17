@@ -7,6 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [HttpModule, ConfigModule],
   providers: [NyTimesService],
+  exports: [NyTimesService],
   controllers: [NytimesController],
 })
 export class NytimesModule {}
