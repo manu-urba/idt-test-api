@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import {
   ApiHeader,
+  ApiInternalServerErrorResponse,
   ApiParam,
   ApiQuery,
   ApiResponse,
@@ -30,6 +31,7 @@ import { ApiKeyAuthGuard } from '../auth/guard/apikey-auth.guard';
   required: true,
 })
 @ApiUnauthorizedResponse()
+@ApiInternalServerErrorResponse()
 @Controller('nytimes')
 export class NyTimesController {
   constructor(private readonly nyTimesService: NyTimesService) {}
