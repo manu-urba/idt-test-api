@@ -101,6 +101,7 @@ export class NyTimesBookDto {
 
 @ApiTags('nytimes')
 export class NyTimesBookExDto extends NyTimesBookDto {
+  @ApiProperty()
   googleBookUrl: string;
 }
 
