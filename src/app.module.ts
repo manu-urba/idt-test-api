@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { NyTimesModule } from './nytimes/nytimes.module';
+import { AuthService } from './auth/auth.service';
+import { AuthModule } from './auth/auth.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -19,11 +21,13 @@ import * as Joi from 'joi';
         NYTIMES_BOOKS_API_KEY: Joi.string().required(),
         GOOGLE_BOOKS_API_KEY: Joi.string().required(),
         GOOGLE_BOOKS_API_BASEURL: Joi.string().uri().required(),
+        ALLOWED_API_KEYS: Joi.string().required(),
       }),
     }),
     NyTimesModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}

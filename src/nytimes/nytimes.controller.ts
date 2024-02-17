@@ -5,16 +5,31 @@ import {
   InternalServerErrorException,
   Param,
   Query,
+  UseGuards,
 } from '@nestjs/common';
-import { ApiParam, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiHeader,
+  ApiParam,
+  ApiQuery,
+  ApiResponse,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 import {
   BestSellersResponseDto,
   BestSellersResponseExDto,
 } from './nytimes.dto';
 import { NyTimesService } from './nytimes.service';
 import { AxiosError } from 'axios';
+import { ApiKeyAuthGuard } from '../auth/guard/apikey-auth.guard';
 
 @ApiTags('nytimes')
+@UseGuards(ApiKeyAuthGuard)
+@ApiHeader({
+  name: 'api-key',
+  required: true,
+})
+@ApiUnauthorizedResponse()
 @Controller('nytimes')
 export class NyTimesController {
   constructor(private readonly nyTimesService: NyTimesService) {}
